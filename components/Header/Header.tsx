@@ -1,4 +1,6 @@
+import { observer } from 'mobx-react';
 import { FC } from 'react';
+import { cartStore } from '../../store/cart';
 import A from '../A/A';
 import styles from './styles.module.scss';
 
@@ -18,15 +20,24 @@ const Header: FC = () => {
           <ul className={styles.list}>
             {items.map(({ id, title, isLink }) => (
               <li className={styles.item} key={id}>
-                {isLink ? <A href={'/'} className={styles.link}>{title}</A> : title}
+                {isLink ? (
+                  <A href={'/'} className={styles.link}>
+                    {title}
+                  </A>
+                ) : (
+                  title
+                )}
               </li>
             ))}
           </ul>
-          <A href="/cart">Cart</A>
+          <A href="/cart" className={styles['cart-link']}>
+            Cart
+            <span>{cartStore.products.length}</span>
+          </A>
         </nav>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default observer(Header);

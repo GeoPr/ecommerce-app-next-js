@@ -1,0 +1,17 @@
+.order {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.sum {
+	font-size: 3rem;
+}
+.order-button {
+	background: rgb(0, 90, 0);
+	font-size: 20px;
+	@media (min-width: 991.98px) {
+		&:hover {
+			background: rgb(0, 70, 0);
+		}
+	}
+}
