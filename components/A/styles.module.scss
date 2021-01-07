@@ -1,0 +1,15 @@
+.link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	border-radius: 10px;
+	height: 40px;
+	background: rebeccapurple;
+	transition: all 0.5s ease 0s;
+	@media (min-width: 991.98px) {
+		&:hover {
+			background: rgb(78, 36, 121);
+		}
+	}
+}
